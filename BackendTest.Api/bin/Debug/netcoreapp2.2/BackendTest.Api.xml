@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BackendTest.Api</name>
+    </assembly>
+    <members>
+        <member name="M:BackendTest.Api.Controllers.ClassController.GetMasterClasses">
+             <summary>
+             Get the list of master classes
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET
+                 {
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.GetMasterClass(System.Int32)">
+             <summary>
+             Get the list of master classes
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET
+                 {
+                    "id": 1
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.SaveMasterClass(BackendTest.Domain.Dto.ClassMasterDto)">
+             <summary>
+             Save master class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "className": "Some major",
+                     "location": "some where",
+                     "teacherName": "Dr. Somebody"
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.UpdateMasterClass(BackendTest.Domain.Dto.ClassMasterDto)">
+             <summary>
+             Update master class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "id": 2,
+                     "className": "Some major",
+                     "location": "some where",
+                     "teacherName": "Dr. Somebody"
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.DeleteMasterClass(BackendTest.Domain.Dto.ClassMasterDto)">
+             <summary>
+             Delete master class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                    "id": 1
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.GetDetailClass(System.Int32)">
+             <summary>
+             Get the the detail class of a specific master class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET
+                 {
+                    "masterClassId": 1
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.SaveDetailClass(BackendTest.Domain.Dto.ClassDetailDto)">
+             <summary>
+             Create a detail class for a single master class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "masterClassId": 1
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.DeleteDetailClass(BackendTest.Domain.Dto.ClassDetailDto)">
+             <summary>
+             Delete detail class. It will be deleted if and only if there is no student enrolled in the class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "classDetailId": 1
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.AddStudentsToDetailClass(BackendTest.Domain.Dto.ClassDetailDto)">
+             <summary>
+             Add a number of students to a specific detail class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "classDetailId": 1,
+                     "studentDtos": [
+                         {
+                             "id": 2
+                         }
+                     ]
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.ClassController.RemoveStudentsFromDetailClass(BackendTest.Domain.Dto.ClassDetailDto)">
+             <summary>
+             Remove a number of students from a specific detail class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "classDetailId": 1,
+                     "studentDtos": [
+                         {
+                             "id": 2
+                         }
+                     ]
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.StudentController.GetStudents">
+             <summary>
+             Get the list of students
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET
+                 {
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.StudentController.GetStudentById(System.Int32)">
+             <summary>
+             Get the a specific student by its Id
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 GET
+                 {
+                    id: 3
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.StudentController.SaveStudent(BackendTest.Domain.Dto.StudentDto)">
+             <summary>
+             Save a single student
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "firstName": "Albert",
+                     "lastName": "Smith",
+                     "age": 20,
+                     "gpa": 18.7
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.StudentController.UpdateStudent(BackendTest.Domain.Dto.StudentDto)">
+             <summary>
+             Update a single student by its Id
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "id": 2,
+                     "firstName": "Albert",
+                     "lastName": "Smith",
+                     "age": 20,
+                     "gpa": 18.7
+                 }
+             </remarks>
+        </member>
+        <member name="M:BackendTest.Api.Controllers.StudentController.DeleteStudent(BackendTest.Domain.Dto.StudentDto)">
+             <summary>
+             Delete a single student by its Id. The student is removed if and only if s/he is not enrolled in any class
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST
+                 {
+                     "id": 3
+                 }
+             </remarks>
+        </member>
+    </members>
+</doc>
